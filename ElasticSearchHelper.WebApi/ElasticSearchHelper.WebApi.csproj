@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>c3e49643-af51-4461-9089-3a5f0d9624fd</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ElasticSearchHelper.Domain\ElasticSearchHelper.Domain.csproj" />
+    <ProjectReference Include="..\ElasticSearchHelper.Infrastructure\ElasticSearchHelper.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AnyDBConfigProvider">
+      <HintPath>E:\softData\projectfile\.netTools\AnyDBConfigProvider\AnyDBConfigProvider\bin\Debug\net8.0\AnyDBConfigProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Commons">
+      <HintPath>E:\softData\projectfile\.netTools\Commons\Commons\bin\Debug\net8.0\Commons.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
