@@ -6,14 +6,9 @@ using Nest;
 
 namespace Elasticsearch.Infrastructure.Service;
 
-public class ActorsService : IActorsService
+public class ActorsService(IActorsRepository actorsRepository) : IActorsService
 {
-    private readonly IActorsRepository actorsRepository;
-
-    public ActorsService(IActorsRepository actorsRepository)
-    {
-        this.actorsRepository = actorsRepository;
-    }
+    private readonly IActorsRepository actorsRepository = actorsRepository;
 
     public async Task<IApiCallDetails> TestConnectionAsync()
     {
@@ -25,7 +20,7 @@ public class ActorsService : IActorsService
         await actorsRepository.InsertManyAsync(NestExtensions.GetSampleData());
     }
 
-    public async Task<ICollection<Actors>> GetAllAsync()
+    public async Task< ICollection<Actors>> GetAllAsync()
     {
         var result = await actorsRepository.GetAllAsync();
 

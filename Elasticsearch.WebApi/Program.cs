@@ -8,7 +8,7 @@ try
     Log.Information("Starting API");
 
     builder.Services.AddApiConfiguration();
-
+    //builder.Services.AddElasticsearch(builder.Configuration);
     builder.Services.AddElasticsearch(Environment.GetEnvironmentVariable("ES:ConnStr"));
     builder.Services.AddSwagger(builder.Configuration);
 

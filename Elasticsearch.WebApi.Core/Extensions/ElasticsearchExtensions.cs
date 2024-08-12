@@ -22,8 +22,7 @@ public static class ElasticsearchExtensions
 
         settings.EnableApiVersioningHeader();
 
-        var client = new ElasticClient(settings);
-        services.AddSingleton<IElasticClient>(client);
+        services.AddSingleton<IElasticClient>(new ElasticClient(settings));
     }
     public static void AddElasticsearch(this IServiceCollection services, string EsStr)
     {

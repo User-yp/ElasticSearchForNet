@@ -20,7 +20,7 @@ public class RequestSerilLogMiddleware
 
     public Task Invoke(HttpContext context)
     {
-        using (LogContext.PushProperty("UserName", context?.User?.Identity?.Name ?? "anônimo"))
+        using (LogContext.PushProperty("UserName", context?.User?.Identity?.Name ?? "anonymous"))
         using (LogContext.PushProperty("CorrelationId", GetCorrelationId(context)))
         {
             return _next.Invoke(context);

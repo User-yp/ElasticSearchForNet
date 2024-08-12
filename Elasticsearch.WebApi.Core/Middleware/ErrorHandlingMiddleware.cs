@@ -32,7 +32,7 @@ public class ErrorHandlingMiddleware
 
     private static async Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
-        Log.Error(exception, "Erro não tratado");
+        Log.Error(exception, "Unhandled Error");
 
         context.Response.ContentType = "application/json";
         context.Response.StatusCode = StatusCodes.Status500InternalServerError;

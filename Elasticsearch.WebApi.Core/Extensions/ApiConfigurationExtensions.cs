@@ -15,7 +15,7 @@ public static class ApiConfigurationExtensions
 {
     public static void AddApiConfiguration(this IServiceCollection services)
     {
-        services.AddRouting(options => options.LowercaseUrls = true);
+        services.AddRouting(options => options.LowercaseUrls = false);
 
         services.AddTransient<IActorsRepository, ActorsRepository>();
         services.AddTransient<IActorsService, ActorsService>();
